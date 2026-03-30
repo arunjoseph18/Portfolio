@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arun Joseph | Motion Graphics Artist</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS reset and base styles */
+        :root {
+            --bg-color: #05050a;
+            --gradient-bg: linear-gradient(135deg, #05050a 0%, #0a0a2a 100%);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0c0;
+            --accent-color: #00d2ff;
+            --accent-glow: 0 0 15px rgba(0, 210, 255, 0.6), 0 0 30px rgba(0, 210, 255, 0.4);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --reset-color: linear-gradient(to left, #26ffd4, #00a0fe);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #030308;
+            /* Deep Navy Background */
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Responsive Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 0 auto 3rem auto;
+            position: relative;
+            display: block;
+            width: fit-content;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--reset-color);
+            bottom: -10px;
+            left: 25%;
+            box-shadow: var(--accent-glow);
+            border-radius: 2px;
+        }
+
+        /* Buttons */
+        .btn,
+        .submit-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            background: linear-gradient(to left, #26ffd4, #00a0fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            border: 2px solid var(--accent-color);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgb(0, 120, 189, 0.2);
+        }
+
+        .btn:hover,
+        .submit-btn:hover {
+            background: linear-gradient(to left, #26ffd4, #00a0fe);
+            color: var(--bg-color);
+            box-shadow: var(--accent-glow);
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            background: rgba(5, 5, 10, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background: rgba(5, 5, 10, 0.85);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+
+            color: white;
+
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            background: linear-gradient(to right, #26ffd4, #00a0fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            background: var(--reset-color);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--reset-color);
+            transition: width 0.3s ease;
+            box-shadow: var(--accent-glow);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vw;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.05) 0%, rgba(5, 5, 10, 0) 70%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+            text-shadow: 0 0 5px rgba(0, 210, 255, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 35px;
+            max-width: 600px;
+        }
+
+        /* Section Padding */
+        section {
+            padding: 100px 0;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent-color);
+            box-shadow: var(--accent-glow);
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-img,
+        .portfolio-img2,
+        .portfolio-img3,
+        .portfolio-img4,
+        .portfolio-img5,
+        .portfolio-img6,
+        .portfolio-img7,
+        .portfolio-img8,
+        .portfolio-img9 {
+            width: 100%;
+            height: 200px;
+            background: #111;
+            background-size: cover;
+        }
+
+        .portfolio-img {
+            background: url("IMG/Motion Ads.jpg") center center/cover no-repeat;
+            background-size: 130% auto;
+        }
+
+        .portfolio-img2 {
+            background: url("IMG/Ui\ UX.png") center center/cover no-repeat;
+        }
+
+        .portfolio-img3 {
+            background: url("IMG/Typography.jpg") center center/cover no-repeat;
+        }
+
+        .portfolio-img4 {
+            background: url("IMG/Product\ ads.jpeg") center center/cover no-repeat;
+
+        }
+
+        .portfolio-img5 {
+            background: url("IMG/Video\ Edit.jpg") center center/cover no-repeat;
+            background-size: 100% auto;
+        }
+
+        .portfolio-img6 {
+            background: url("IMG/Graphic\ Design.png") center center/cover no-repeat;
+        }
+
+        .portfolio-img7 {
+            background: url("IMG/3d.jpg") center center/cover no-repeat;
+
+        }
+
+        .portfolio-img8 {
+            background: url("IMG/2D\ Animation.png") center center/cover no-repeat;
+            background-size: 100% auto;
+        }
+
+        .portfolio-img9 {
+            background: url("IMG/AI.jpg") center center/cover no-repeat;
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-category {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .portfolio-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            pointer-events: none;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .portfolio-card:hover::after {
+            border-color: var(--accent-color);
+            box-shadow: inset 0 0 20px rgba(0, 210, 255, 0.2);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #26ffd4, #00a0fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            text-shadow: var(--accent-glow);
+            transition: transform 0.3s ease;
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        .service-title {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .service-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 210, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(0, 210, 255, 0.05);
+        }
+
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--card-border);
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(to right, #26ffd4, #00a0fe);
+            color: var(--bg-color);
+            box-shadow: var(--accent-glow);
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .input-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
+        }
+
+
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--accent-color);
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.6s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .about-grid,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(5, 5, 10, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.4s ease-in-out;
+                border-bottom: 1px solid var(--card-border);
+            }
+
+            nav ul.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+        }
+
+        /* Dynamic Background & Noise */
+        .bg-spotlight {
+            position: fixed;
+            width: 1000px;
+            height: 1000px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(0, 210, 255, 0) 60%);
+            left: -500px;
+            top: -500px;
+            pointer-events: none;
+            z-index: -2;
+            transform: translate(var(--mouse-x, 50vw), var(--mouse-y, 50vh));
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.6s ease;
+            will-change: transform, background;
+        }
+
+        body.hovering-interactive .bg-spotlight {
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.16) 0%, rgba(0, 210, 255, 0) 65%);
+        }
+
+        .bg-noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.04;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Dynamic Background Elements -->
+    <div class="bg-spotlight"></div>
+    <div class="bg-noise"></div>
+
+    <!-- Header / Navbar -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Arun Joseph<span>.</span></a>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul id="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#softwares">Softwares</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <!-- <span class="subtitle fade-in">Motion Graphics Artist</span> -->
+                <h1 class="fade-in delay-1">Motion Graphics Artist</h1>
+                <p class="fade-in delay-2">Crafting cinematic visuals, dynamic animations, and scroll-stopping motion
+                    design to help brands tell their compelling stories.</p>
+                <a href="#contact" class="btn fade-in delay-3">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image fade-in">
+                    <div
+                        style="width: 100%; height: 400px; border-radius: 20px; background: linear-gradient(45deg, var(--card-bg), rgba(0,210,255,0.05)); border: 1px solid var(--card-border); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-camera-retro"
+                            style="font-size: 4rem; color: var(--accent-color); opacity: 0.5;"></i>
+                    </div>
+                </div>
+                <div class="about-text fade-in delay-1">
+                    <h2 class="section-title" style="margin: 0 0 2rem 0; text-align: left;">About Me</h2>
+                    <p>I’m a passionate Motion Graphics Artist specializing in creating engaging visual stories through
+                        animation, design, and video. With a strong foundation in Adobe After Effects, Premiere Pro,
+                        Photoshop, Blender and visual storytelling, etc. I transform ideas into dynamic content that
+                        captures attention and communicates clearly.</p>
+                    <p>I enjoy blending creativity with strategy to produce promotional videos, explainer animations,
+                        brand visuals, and social media content that deliver real impact. Always learning, always
+                        experimenting. I strive to bring fresh, modern, and meaningful motion to every project.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" style="background: rgba(255,255,255,0.02);">
+        <div class="container fade-in">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="video-container">
+                <video autoplay muted loop playsinline>
+                    <source src="IMG/Arun Joseph.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work/Portfolio Section -->
+    <section id="work">
+        <div class="container">
+            <h2 class="section-title fade-in">Skills</h2>
+            <div class="portfolio-grid">
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-img"></div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Motion Ads</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in delay-1">
+                    <div class="portfolio-img2"></div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">UI/UX Design</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in delay-2">
+                    <div class="portfolio-img3"></div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Typography Ads</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-img4"></div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Product Ads</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in delay-1">
+                    <div class="portfolio-img5"></div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Video Editing</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in delay-2">
+                    <div class="portfolio-img6"></div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Graphics Design</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-img7"></div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">3D</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in delay-1">
+                    <div class="portfolio-img8"></div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">2D Animation</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-in delay-2">
+                    <div class="portfolio-img9"></div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Artificial Intelligence</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container fade-in">
+            <h2 class="section-title">Experience</h2>
+            <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;">
+                <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 30px; border-radius: 12px; position: relative; transition: all 0.3s ease;"
+                    onmouseover="this.style.borderColor='var(--accent-color)'; this.style.transform='translateY(-5px)';"
+                    onmouseout="this.style.borderColor='var(--card-border)'; this.style.transform='translateY(0)';">
+                    <div style="color: var(--accent-color); font-weight: 600; margin-bottom: 10px; font-size: 1.1rem;">
+                        4 Year's Experience</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 5px;">Motion Graphics Artist</h3>
+                    <div style="color: var(--text-secondary); margin-bottom: 15px;">Smart Media Lab, Thrissur</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Specializing in motion design, video
+                        editing, and digital visual storytelling. Skilled in crafting high-impact product
+                        advertisements, logo animations, typography motion, and engaging 2D animations for brands and
+                        media platforms.</p>
+                    <br>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Experienced in delivering cinematic
+                        edits for movie projects, short films, and promotional content, with a strong eye for timing,
+                        composition, and narrative flow. Adept at creating compelling social media creatives, including
+                        Instagram reels, posters, and short-form videos that capture attention and drive audience
+                        engagement.</p>
+                    <br>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Also proficient in UI/UX design,
+                        combining aesthetics with usability to develop clean, modern, and interactive digital
+                        experiences. Passionate about transforming ideas into visually compelling stories through
+                        motion, design, and creativity.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Softwares Section -->
+    <section id="softwares" style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2 class="section-title fade-in">Softwares</h2>
+            <div class="services-grid">
+
+                <div class="service-card fade-in">
+                    <i class="service-icon">Ps</i>
+                    <h3 class="service-title">Adobe Photoshop</h3>
+                </div>
+
+                <div class="service-card fade-in delay-1">
+                    <i class="service-icon">Ai</i>
+                    <h3 class="service-title">Adobe Illustrator</h3>
+                </div>
+
+                <div class="service-card fade-in delay-2">
+                    <i class="service-icon">Ae</i>
+                    <h3 class="service-title">Adobe After Effects</h3>
+                </div>
+
+                <div class="service-card fade-in delay-3">
+                    <i class="service-icon">Pr</i>
+                    <h3 class="service-title">Adobe Premiere Pro</h3>
+                </div>
+
+            </div>
+            <br>
+            <div class="services-grid">
+
+                <div class="service-card fade-in delay-1">
+                    <i class="service-icon">Xd</i>
+                    <h3 class="service-title">Adobe XD</h3>
+                </div>
+                <div class="service-card fade-in delay-1">
+                    <i class="fa-brands fa-figma service-icon"></i>
+                    <h3 class="service-title">Figma</h3>
+                </div>
+
+
+                <div class="service-card fade-in delay-2" style="padding:23px 0;">
+                    <svg width="80" height="75" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#26ffd4" />
+                                <stop offset="100%" stop-color="#00a0fe" />
+                            </linearGradient>
+                            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="7" result="blur" />
+                                <feComposite in="blur" in2="SourceAlpha" operator="out" result="glow" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0.82  0 0 0 0 1  0 0 0 1 0" />
+
+                                <feMerge>
+                                    <feMergeNode />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="none" />
+                        <g filter="url(#glow)">
+                            <g fill="url(#brandGradient)" transform="translate(50, 53)">
+                                <path d="M0 -22 C 8 -22, 12 -12, 0 -1 C -12 -12, -8 -22, 0 -22 Z" />
+                                <path d="M0 -22 C 8 -22, 12 -12, 0 -1 C -12 -12, -8 -22, 0 -22 Z"
+                                    transform="rotate(120)" />
+                                <path d="M0 -22 C 8 -22, 12 -12, 0 -1 C -12 -12, -8 -22, 0 -22 Z"
+                                    transform="rotate(240)" />
+                            </g>
+                            <circle cx="50" cy="50" r="36" fill="none" stroke="url(#brandGradient)" stroke-width="4" />
+                        </g>
+
+                    </svg>
+                    <h3 class="service-title">Davinci Resolve</h3>
+                </div>
+
+                <div class="service-card fade-in delay-3" style="padding:23px 0;">
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <svg fill="#000000" width="90px" height="75px" viewBox="0 0 40 42" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>blender</title>
+                        <defs>
+                            <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#26ffd4" />
+                                <stop offset="100%" stop-color="#00a0fe" />
+                            </linearGradient>
+                            <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="1.2" result="blur" />
+                                <feComposite in="blur" in2="SourceAlpha" operator="out" result="glow2" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0.82  0 0 0 0 1  0 0 0 1 0" />
+
+                                <feMerge>
+                                    <feMergeNode />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <g filter="url(#glow2)">
+                            <path fill="url(#brandGradient)" transform="translate(0, 5) scale(1.2)"
+                                d="M25.297 21.713c-1.224 1.198-2.901 1.937-4.751 1.937-1.842 0-3.513-0.733-4.738-1.923l0.002 0.002c-0.557-0.559-0.998-1.235-1.282-1.988l-0.013-0.039c-0.2-0.538-0.315-1.16-0.315-1.809 0-0.95 0.247-1.842 0.681-2.615l-0.014 0.027c0.379-0.673 0.86-1.241 1.43-1.705l0.011-0.008c1.157-0.923 2.64-1.481 4.253-1.481 1.606 0 3.083 0.553 4.251 1.479l-0.014-0.011c0.581 0.47 1.062 1.037 1.424 1.679l0.015 0.029c0.348 0.615 0.581 1.34 0.651 2.111l0.002 0.021c0.012 0.136 0.020 0.295 0.020 0.455 0 0.649-0.117 1.27-0.33 1.844l0.012-0.037c-0.297 0.793-0.737 1.471-1.294 2.032l0-0zM10.189 19.538c0.040 0.638 0.154 1.233 0.334 1.8l-0.014-0.053c0.431 1.338 1.113 2.489 1.997 3.452l-0.006-0.007c0.956 1.048 2.115 1.893 3.417 2.474l0.065 0.026c1.341 0.6 2.907 0.95 4.555 0.95 1.661 0 3.238-0.355 4.661-0.994l-0.072 0.029c1.366-0.613 2.524-1.461 3.473-2.503l0.008-0.008c0.876-0.959 1.558-2.112 1.971-3.386l0.018-0.066c0.254-0.78 0.4-1.677 0.4-2.609 0-0.435-0.032-0.862-0.093-1.28l0.006 0.047c-0.19-1.307-0.638-2.48-1.291-3.509l0.022 0.036c-0.629-0.999-1.399-1.844-2.292-2.536l-0.022-0.017h0.003l-9.395-7.213c-0.326-0.221-0.728-0.353-1.16-0.353-0.434 0-0.838 0.133-1.171 0.36l0.007-0.005c-0.337 0.181-0.563 0.531-0.563 0.934 0 0.338 0.159 0.639 0.406 0.833l0.002 0.002-0.001 0.001 3.906 3.178-11.925 0.012c-0.019-0.001-0.042-0.001-0.065-0.001-0.946 0-1.752 0.606-2.049 1.45l-0.005 0.015c-0.192 0.831 0.475 1.521 1.5 1.525v0.002l6.036-0.012-10.814 8.3c-0.607 0.379-1.006 1.044-1.006 1.801 0 0.402 0.112 0.778 0.307 1.099l-0.005-0.009c0.393 0.39 0.934 0.631 1.531 0.631 0.595 0 1.134-0.239 1.527-0.626l-0 0 5.878-4.81c-0.043 0.306-0.072 0.665-0.079 1.030l-0 0.009zM16.637 17.517c0.069-1.012 0.553-1.9 1.281-2.502l0.006-0.005c0.746-0.615 1.711-0.987 2.764-0.987s2.018 0.373 2.771 0.993l-0.008-0.006c0.734 0.606 1.217 1.494 1.284 2.495l0.001 0.011c0.003 0.050 0.004 0.108 0.004 0.166 0 0.993-0.416 1.889-1.083 2.523l-0.002 0.001c-0.774 0.726-1.819 1.172-2.968 1.172s-2.194-0.446-2.97-1.174l0.002 0.002c-0.669-0.635-1.085-1.531-1.085-2.524 0-0.058 0.001-0.116 0.004-0.174l-0 0.008z">
+                            </path>
+                        </g>
+                    </svg>
+                    <h3 class="service-title">Blender</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <div class="contact-container fade-in">
+
+                <div class="contact-info">
+                    <h3>Let's create something amazing.</h3>
+                    <p>Have a project in mind or just want to say hi? Feel free to reach out. I'm currently available
+                        for freelance work.</p>
+                    <div>
+                        <a href="Arun Joseph.pdf" download="Arun Joseph.pdf"><button type="submit"
+                                class="submit-btn">Download
+                                Resume</button></a>
+                    </div>
+                    <br>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/arunjoseph.aj/" target="_blank" title="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/+919061210327" target="_blank" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:arunjosephtholath@gmail.com" title="Email"><i class="far fa-envelope"></i></a>
+                        <a href="https://www.behance.net/arunjoseph37" target="_blank" title="Behance"><i
+                                class="fa-brands fa-behance"></i></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 <span>Arun Joseph</span>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts for Interactivity -->
+    <script>
+        // Navbar Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Close menu on link click (mobile)
+        document.querySelectorAll('#nav-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Spotlight Background Logic
+        const bgSpotlight = document.querySelector('.bg-spotlight');
+
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let ticking = false;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    bgSpotlight.style.setProperty('--mouse-x', `${mouseX}px`);
+                    bgSpotlight.style.setProperty('--mouse-y', `${mouseY}px`);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Hover dynamics for interactive background
+        const interactables = document.querySelectorAll('a, button, input, textarea, .portfolio-card, .service-card, .menu-toggle');
+
+        interactables.forEach((el) => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('hovering-interactive');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('hovering-interactive');
+            });
+        });
+    </script>
+</body>
+
+</html>
