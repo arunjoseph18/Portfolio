@@ -736,10 +736,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image fade-in">
-                    <div class="image-size"
-                        style="border: 1px solid var(--card-border); padding: 30px; border-radius: 12px; position: relative; transition: all 0.3s ease;"
-                        onmouseover="this.style.borderColor='var(--accent-color)'; this.style.transform='translateY(-5px)';"
-                        onmouseout="this.style.borderColor='var(--card-border)'; this.style.transform='translateY(0)';">
+                    <div class="image-size">
                     </div>
                 </div>
                 <div class="about-text fade-in delay-1">
@@ -1045,7 +1042,8 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 <span>Arun Joseph</span>. All Rights Reserved.</p>
+            <p>&copy; <span id="year" style="color: white;">2026</span> <span>Arun Joseph</span>. All Rights Reserved.
+            </p>
         </div>
     </footer>
 
@@ -1127,6 +1125,9 @@
                 document.body.classList.remove('hovering-interactive');
             });
         });
+
+        //Footer year
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 
